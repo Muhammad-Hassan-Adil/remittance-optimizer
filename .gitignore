@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+backend/venv/
+backend/.venv/
+backend/__pycache__/
+backend/build/
+backend/dist/
+backend/*.spec
+*.db
+.env
