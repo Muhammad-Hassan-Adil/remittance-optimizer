@@ -39,7 +39,7 @@ export default function PayoutPage() {
     const fetchPayout = async (currentAmount: number, currentFiler: boolean) => {
         setLoading(true);
         try {
-            const res = await fetch(`http://39.37.165.88:8080/api/payout/${currency}/${platform}/meezan-bank?amount=${currentAmount}&is_filer=${currentFiler}`);
+            const res = await fetch(`http://39.37.165.88:8020/api/payout/${currency}/${platform}/meezan-bank?amount=${currentAmount}&is_filer=${currentFiler}`);
             if (res.ok) {
                 const result = await res.json();
                 setData(result);

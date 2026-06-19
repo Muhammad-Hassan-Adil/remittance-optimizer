@@ -1,8 +1,38 @@
-INFO:     Started server process [6924]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8010 (Press CTRL+C to quit)
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [6924]
+Traceback (most recent call last):
+  File "run.py", line 2, in <module>
+    from main import app
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "pyimod02_importers.py", line 457, in exec_module
+  File "main.py", line 5, in <module>
+    import models
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "pyimod02_importers.py", line 457, in exec_module
+  File "models.py", line 2, in <module>
+    from database import Base
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "pyimod02_importers.py", line 457, in exec_module
+  File "database.py", line 6, in <module>
+    engine = create_engine(
+             ^^^^^^^^^^^^^^
+  File "<string>", line 2, in create_engine
+  File "sqlalchemy\util\deprecations.py", line 281, in warned
+  File "sqlalchemy\engine\create.py", line 617, in create_engine
+  File "sqlalchemy\dialects\sqlite\pysqlite.py", line 487, in import_dbapi
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "pyimod02_importers.py", line 457, in exec_module
+  File "sqlite3\__init__.py", line 57, in <module>
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "pyimod02_importers.py", line 457, in exec_module
+  File "sqlite3\dbapi2.py", line 27, in <module>
+KeyboardInterrupt
+[PYI-12020:ERROR] Failed to execute script 'run' due to unhandled exception!

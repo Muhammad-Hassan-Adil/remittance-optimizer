@@ -1,6 +1,6 @@
 export async function generateStaticParams() {
     try {
-        const res = await fetch('http://localhost:8080/api/platforms');
+        const res = await fetch('http://localhost:8020/api/platforms');
         if (res.ok) {
             const platforms = await res.json();
             const currencies = ['usd', 'gbp', 'eur', 'aud', 'aed'];
