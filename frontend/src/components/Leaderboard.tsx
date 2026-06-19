@@ -37,7 +37,7 @@ export default function Leaderboard() {
 
             setLoading(true);
             try {
-                const res = await fetch(`http://39.37.165.88:8010/api/leaderboard?amount=${parsedAmount}&is_filer=${isFiler}&currency=${currency}`);
+                const res = await fetch(`http://39.37.165.88:8080/api/leaderboard?amount=${parsedAmount}&is_filer=${isFiler}&currency=${currency}`);
                 if (res.ok) {
                     const data = await res.json();
                     setLeaderboardData(data);

@@ -39,8 +39,7 @@ export default function PayoutPage() {
     const fetchPayout = async (currentAmount: number, currentFiler: boolean) => {
         setLoading(true);
         try {
-            // Hardcoding meezan-bank as local tax math is identical across all local banks
-            const res = await fetch(`http://39.37.165.88:8010/api/payout/${currency}/${platform}/meezan-bank?amount=${currentAmount}&is_filer=${currentFiler}`);
+            const res = await fetch(`http://39.37.165.88:8080/api/payout/${currency}/${platform}/meezan-bank?amount=${currentAmount}&is_filer=${currentFiler}`);
             if (res.ok) {
                 const result = await res.json();
                 setData(result);
@@ -226,7 +225,7 @@ export default function PayoutPage() {
                                         ))}
                                     </Pie>
                                     <Tooltip 
-                                        formatter={(value: number) => `Rs ${value.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})}`}
+                                        formatter={(value: any) => `Rs ${Number(value).toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})}`}
                                         contentStyle={{ backgroundColor: '#030712', borderColor: '#1f2937', color: '#f3f4f6', borderRadius: '12px', padding: '12px 16px', boxShadow: '0 10px 25px -5px rgba(0,0,0,0.5)' }}
                                         itemStyle={{ color: '#fff', fontWeight: 600, fontSize: '1.1rem' }}
                                     />

@@ -8,7 +8,7 @@ A platform that ranks and calculates the absolute best payout routes for Pakista
 - **Data Gathering**: Python BeautifulSoup web scraper
 
 ## Backend Deployment (NSSM Windows Service)
-This application runs a local backend service on port `8010`. To install the backend executable as a permanent Windows Service:
+This application runs a local backend service on port `8080`. To install the backend executable as a permanent Windows Service:
 
 1. Download [NSSM](https://nssm.cc/).
 2. Extract the `win64/nssm.exe` into your `backend/dist` folder.
@@ -19,7 +19,7 @@ This application runs a local backend service on port `8010`. To install the bac
    nssm start RemittanceOptimizer
    ```
    
-Your backend is now running flawlessly in the background on port 8010 and will boot up automatically when you restart your PC. The built-in APScheduler automatically fetches the latest Google Finance exchange rates every 24 hours.
+Your backend is now running flawlessly in the background on port 8080 and will boot up automatically when you restart your PC. The built-in APScheduler automatically fetches the latest Google Finance exchange rates every 24 hours.
 
 ## Frontend Configuration
 The frontend automatically points to your PC's public IP address for all API calls. To deploy it to GitHub Pages:

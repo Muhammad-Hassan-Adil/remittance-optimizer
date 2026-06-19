@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+export const dynamic = "force-static";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'http://localhost:3000'; // Change to production URL when deploying
@@ -39,7 +40,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     try {
         // Fetch dynamic platforms
-        const res = await fetch('http://39.37.165.88:8010/api/platforms');
+        const res = await fetch('http://39.37.165.88:8080/api/platforms');
         if (res.ok) {
             const platforms = await res.json();
             const currencies = ['usd', 'gbp', 'eur', 'aud', 'aed'];
@@ -48,7 +49,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                     routes.push({
                         url: `${baseUrl}/payout/${currency}/${platform.slug}`,
                         lastModified: new Date(),
-                        changeFrequency: 'always' as const, // Rates change constantly
+                        changeFrequency: 'daily' as const, // Rates change constantly
                         priority: 0.9,
                     });
                 }
