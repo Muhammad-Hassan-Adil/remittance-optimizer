@@ -4,7 +4,7 @@ import Leaderboard from '../components/Leaderboard';
 
 async function getPlatforms() {
     try {
-        const res = await fetch('http://39.37.165.88:8080/api/platforms', { cache: 'no-store' });
+        const res = await fetch('http://39.37.165.88:8020/api/platforms', { cache: 'no-store' });
         if (!res.ok) return [];
         return res.json();
     } catch {

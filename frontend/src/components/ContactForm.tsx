@@ -13,7 +13,7 @@ export default function ContactForm() {
         setStatus('loading');
 
         try {
-            const res = await fetch('http://39.37.165.88:8080/api/contact', {
+            const res = await fetch('http://39.37.165.88:8020/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, message })

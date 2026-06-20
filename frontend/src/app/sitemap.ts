@@ -40,7 +40,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     try {
         // Fetch dynamic platforms
-        const res = await fetch('http://39.37.165.88:8080/api/platforms');
+        const res = await fetch('http://39.37.165.88:8020/api/platforms');
         if (res.ok) {
             const platforms = await res.json();
             const currencies = ['usd', 'gbp', 'eur', 'aud', 'aed'];
